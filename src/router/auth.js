@@ -25,6 +25,22 @@ var crypt = {
     return decipher.toString(CryptoJS.enc.Utf8);
   },
 };
+var crypt = {
+  // (B1) THE SECRET KEY
+  secret: "CIPHERKEY",
+
+  // (B2) ENCRYPT
+  encrypt: (clear) => {
+    var cipher = CryptoJS.AES.encrypt(clear, crypt.secret);
+    return cipher.toString();
+  },
+
+  // (B3) DECRYPT
+  decrypt: (cipher) => {
+    var decipher = CryptoJS.AES.decrypt(cipher, crypt.secret);
+    return decipher.toString(CryptoJS.enc.Utf8);
+  },
+};
 
 
 
